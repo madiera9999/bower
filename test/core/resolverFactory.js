@@ -622,7 +622,7 @@ describe('resolverFactory', function () {
         callFactory({ source: 'bower/bower' })
         .then(function (resolver) {
             var config = {
-                shorthandResolver: 'git://bower.io/{{owner}}/{{package}}/{{shorthand}}'
+                shorthandResolver: 'https://bower.io/{{owner}}/{{package}}/{{shorthand}}'
             };
 
             expect(resolver.getSource()).to.equal('https://github.com/bower/bower.git');
@@ -630,7 +630,7 @@ describe('resolverFactory', function () {
             return callFactory({ source: 'IndigoUnited/promptly' }, config);
         })
         .then(function (resolver) {
-            expect(resolver.getSource()).to.equal('git://bower.io/IndigoUnited/promptly/IndigoUnited/promptly');
+            expect(resolver.getSource()).to.equal('https://bower.io/IndigoUnited/promptly/IndigoUnited/promptly');
             next();
         })
         .done();
